@@ -22,7 +22,7 @@ $stmt->bind_param("ssi", $name, $email, $id);
 if ($stmt->execute()) {
     echo json_encode(["message" => "Data updated successfully"]);
 } else {
-    echo json_encode(["message" => "Failed to update data", "error" => $stmt->error]);
+    echo json_encode(["message" => "Failed to update data"]);
 }
 
 $stmt->close();

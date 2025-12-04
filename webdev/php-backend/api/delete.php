@@ -20,7 +20,7 @@ $stmt->bind_param("i", $id);
 if ($stmt->execute()) {
     echo json_encode(["message" => "User deleted successfully"]);
 } else {
-    echo json_encode(["message" => "Failed to delete user", "error" => $stmt->error]);
+    echo json_encode(["message" => "Failed to delete user"]);
 }
 
 $stmt->close();

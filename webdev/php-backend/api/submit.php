@@ -25,9 +25,8 @@ $stmt->bind_param("ss", $name, $email);
 if ($stmt->execute()) {
     echo json_encode(["message" => "Data saved successfully"]);
 } else {
-    // Return DB error for easier debugging while developing.
-    // Remove or sanitize this message in production.
-    echo json_encode(["message" => "Failed to save data", "error" => $stmt->error]);
+    // Generic failure message (don't expose DB internals in production)
+    echo json_encode(["message" => "Failed to save data"]);
 }
 
 $stmt->close();
